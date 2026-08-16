@@ -1,32 +1,27 @@
 package chapter2;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class TokenWindow {
 
-    private final int maxSize;;
-    private String[] tokens;
+    private final int maxSize;
+    private final LinkedList<String> tokenList;
 
     public TokenWindow(int maxSize) {
         this.maxSize = maxSize;
-        this.tokens = new String[maxSize];
+        this.tokenList = new LinkedList<>();
     }
 
     public void append(String token) {
-        for (int i = maxSize - 1; i > 0; i--) {
-            tokens[i] = tokens[i - 1];
+        if (tokenList.size() == maxSize) {
+            tokenList.removeFirst();
         }
-        tokens[0]  = token;
+        tokenList.addLast(token);
     }
 
     public List<String> getWindow() {
-        List<String> tokenList = new ArrayList<>();
-        for (int i = maxSize - 1; i >= 0; i--) {
-            if (tokens[i] != null) {
-                tokenList.add(tokens[i]);
-            }
-        }
-        return tokenList;
+        return new ArrayList<>(tokenList);
     }
 }

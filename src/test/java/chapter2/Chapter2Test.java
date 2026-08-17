@@ -26,4 +26,17 @@ public class Chapter2Test {
         assertEquals("input", result.get(2));
         assertEquals("tokens", result.get(3));
     }
+
+    @Test
+    public void testExercise2() {
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        int[] nums = {1, 1, 2, 3, 3, 4, 5, 5};
+        int newLength = removeDuplicates.removeDuplicates(nums);
+        assertEquals(5, newLength);
+        assertEquals(1, nums[0]);
+        assertEquals(2, nums[1]);
+        assertEquals(3, nums[2]);
+        assertEquals(4, nums[3]);
+        assertEquals(5, nums[4]);
+    }
 }

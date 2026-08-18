@@ -39,4 +39,20 @@ public class Chapter2Test {
         assertEquals(4, nums[3]);
         assertEquals(5, nums[4]);
     }
+
+    @Test
+    public void testExercise3() {
+//        Input: list1 = [1,2,4], list2 = [1,3,4] → Output: [1,1,2,3,4,4]
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4, null)));
+        ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4, null)));
+        ListNode mergedList = new MergeSortedLists().mergeTwoLists(list1, list2);
+        assertEquals(1, mergedList.val);
+        assertEquals(1, mergedList.next.val);
+        assertEquals(2, mergedList.next.next.val);
+        assertEquals(3, mergedList.next.next.next.val);
+        assertEquals(4, mergedList.next.next.next.next.val);
+        assertEquals(4, mergedList.next.next.next.next.next.val);
+        assertEquals(null, mergedList.next.next.next.next.next.next);
+//        Input: list1 = [], list2 = [] → Output: []
+    }
 }

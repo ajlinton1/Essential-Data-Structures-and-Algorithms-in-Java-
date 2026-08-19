@@ -55,4 +55,17 @@ public class Chapter2Test {
         assertEquals(null, mergedList.next.next.next.next.next.next);
 //        Input: list1 = [], list2 = [] → Output: []
     }
+
+    @Test
+    public void testExercise4() {
+        ArrayRotation arrayRotation = new ArrayRotation();
+        int[] nums = {1, 2, 3, 4, 5};
+        int k = 2;
+        arrayRotation.rotate(nums, k);
+        assertEquals(4, nums[0]);
+        assertEquals(5, nums[1]);
+        assertEquals(1, nums[2]);
+        assertEquals(2, nums[3]);
+        assertEquals(3, nums[4]);
+    }
 }

@@ -68,4 +68,18 @@ public class Chapter2Test {
         assertEquals(2, nums[3]);
         assertEquals(3, nums[4]);
     }
+
+    @Test
+    public void testExercise5() {
+        RemoveElements removeElements = new RemoveElements();
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(6, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6, null)))))));
+        int val = 6;
+        ListNode result = removeElements.removeElements(head, val);
+        assertEquals(1, result.val);
+        assertEquals(2, result.next.val);
+        assertEquals(3, result.next.next.val);
+        assertEquals(4, result.next.next.next.val);
+        assertEquals(5, result.next.next.next.next.val);
+        assertEquals(null, result.next.next.next.next.next);
+    }
 }

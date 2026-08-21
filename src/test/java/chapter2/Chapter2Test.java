@@ -82,4 +82,12 @@ public class Chapter2Test {
         assertEquals(5, result.next.next.next.next.val);
         assertEquals(null, result.next.next.next.next.next);
     }
+
+    @Test
+    public void testExercise6() {
+        MiddleNodeFinder middleNodeFinder = new MiddleNodeFinder();
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, null)))));
+        ListNode result = middleNodeFinder.middleNode(head);
+        assertEquals(3, result.val);
+    }
 }

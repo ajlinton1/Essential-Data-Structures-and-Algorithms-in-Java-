@@ -105,6 +105,20 @@ public class Chapter2Test {
         int[] nums2 = {1};
         int result2 = maxSubarray.maxSubArray(nums2);
         assertEquals(1, result2);
+    }
 
+    @Test
+    public void testExercise8() {
+        /*
+        Input: nums1 = [1,2,2,1], nums2 = [2,2] → Output: [2,2]
+        Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4] → Output: [4,9]
+        */
+        ArrayIntersection arrayIntersection = new ArrayIntersection();
+        int[] nums1 = {1, 2, 2, 1};
+        int[] nums2 = {2, 2};
+        int[] result1 = arrayIntersection.intersect(nums1, nums2);
+        assertEquals(2, result1.length);
+        assertEquals(2, result1[0]);
+        assertEquals(2, result1[1]);
     }
 }

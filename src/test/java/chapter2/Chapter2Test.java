@@ -90,4 +90,21 @@ public class Chapter2Test {
         ListNode result = middleNodeFinder.middleNode(head);
         assertEquals(3, result.val);
     }
+
+    @Test
+    public void testExercise7() {
+        /*
+        Input: [‑2,1,‑3,4,‑1,2,1,‑5,4] → Output: 6 (subarray [4,‑1,2,1])
+        Input: [1] → Output: 1
+        */
+        MaxSubarray maxSubarray = new MaxSubarray();
+        int[] nums1 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int result1 = maxSubarray.maxSubArray(nums1);
+        assertEquals(6, result1);
+
+        int[] nums2 = {1};
+        int result2 = maxSubarray.maxSubArray(nums2);
+        assertEquals(1, result2);
+
+    }
 }

@@ -20,4 +20,15 @@ public class Chapter3Test {
         assertEquals("summarize(read_file(config.yaml))", result.get(2));
         assertEquals("search(summarize(read_file(config.yaml)))", result.get(3));
     }
+
+    @Test
+    public void testExercise2() {
+        MinStack minStack = new MinStack();
+        minStack.push(5);
+        minStack.push(7);
+        minStack.push(3);
+        assertEquals(3, minStack.getMin());
+        minStack.pop();
+        assertEquals(5, minStack.getMin());
+    }
 }

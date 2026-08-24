@@ -6,7 +6,7 @@ import java.util.regex.*;
 
 public class ExecutionOrder {
 
-    private Stack<String> stack = new Stack<>();
+    private final Stack<String> stack = new Stack<>();
 
     public ExecutionOrder() {
     }

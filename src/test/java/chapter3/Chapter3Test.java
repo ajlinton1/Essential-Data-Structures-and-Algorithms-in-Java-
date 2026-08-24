@@ -16,8 +16,8 @@ public class Chapter3Test {
         ExecutionOrder executionOrder = new ExecutionOrder();
         String expression = "search(summarize(read_file(config.yaml)))";
         var result = executionOrder.getExecutionOrder(expression);
-        assertEquals("read_file(config.yaml)", result.get(2));
-        assertEquals("summarize(read_file(config.yaml))", result.get(1));
-        assertEquals("search(summarize(read_file(config.yaml)))", result.get(0));
+        assertEquals("read_file(config.yaml)", result.get(1));
+        assertEquals("summarize(read_file(config.yaml))", result.get(2));
+        assertEquals("search(summarize(read_file(config.yaml)))", result.get(3));
     }
 }

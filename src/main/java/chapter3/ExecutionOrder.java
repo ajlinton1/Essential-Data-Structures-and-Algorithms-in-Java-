@@ -6,6 +6,11 @@ import java.util.regex.*;
 
 public class ExecutionOrder {
 
+    private Stack<String> stack = new Stack<>();
+
+    public ExecutionOrder() {
+    }
+
     List<String> getExecutionOrder(String expression) {
         /*
         Input: "search(summarize(read_file(config.yaml)))"
@@ -14,19 +19,22 @@ public class ExecutionOrder {
         "search(summarize(read_file(config.yaml)))"]
          */
 
-        var result = new ArrayList<String>();
-        result.add(expression);
+        stack.push(expression);
         var more = true;
         Pattern pattern = Pattern.compile("\\((.*)\\)");
         while (more) {
             Matcher matcher = pattern.matcher(expression);
             if (matcher.find()) {
                 System.out.println(matcher.group(1));
-                result.add(matcher.group(1));
+                stack.push(matcher.group(1));
                 expression = matcher.group(1);
             } else {
                 more = false;
             }
+        }
+        List<String> result = new ArrayList<>();
+        while (!stack.isEmpty()) {
+            result.add(stack.pop());
         }
         return result;
     }

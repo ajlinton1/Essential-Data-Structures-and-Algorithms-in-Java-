@@ -31,4 +31,17 @@ public class Chapter3Test {
         minStack.pop();
         assertEquals(5, minStack.getMin());
     }
+
+    @Test
+    public void testExercise3() {
+        QueueUsingTwoStacks<Integer> queueUsingTwoStacks = new QueueUsingTwoStacks<>();
+        queueUsingTwoStacks.enqueue(5);
+        queueUsingTwoStacks.enqueue(7);
+        queueUsingTwoStacks.enqueue(3);
+        assertEquals(5, queueUsingTwoStacks.peek());
+        queueUsingTwoStacks.dequeue();
+        assertEquals(7, queueUsingTwoStacks.peek());
+        queueUsingTwoStacks.dequeue();
+        assertEquals(3, queueUsingTwoStacks.peek());
+    }
 }

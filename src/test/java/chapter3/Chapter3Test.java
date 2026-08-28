@@ -44,4 +44,21 @@ public class Chapter3Test {
         queueUsingTwoStacks.dequeue();
         assertEquals(3, queueUsingTwoStacks.peek());
     }
+
+    @Test
+    public void testExercise4() {
+        /*
+        Input: [73, 74, 75, 71, 69, 72, 76, 73]
+        Output: [1, 1, 4, 2, 1, 1, 0, 0]
+         */
+        var answer = new DailyTemperatures().dailyTemperatures(new int[]{73, 74, 75, 71, 69, 72, 76, 73});
+        assertEquals(1, answer[0]);
+        assertEquals(1, answer[1]);
+        assertEquals(4, answer[2]);
+        assertEquals(2, answer[3]);
+        assertEquals(1, answer[4]);
+        assertEquals(1, answer[5]);
+        assertEquals(0, answer[6]);
+        assertEquals(0, answer[7]);
+    }
 }
